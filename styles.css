@@ -704,19 +704,3 @@ body {
     }
 }
 
-/* Additional Classes */
-.text-center {
-    text-align: center;
-}
-
-.centered-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.max-width-800 {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
