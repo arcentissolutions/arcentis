@@ -4,147 +4,246 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcentis Solutions - Transforming Potential into Progress</title>
-    <meta name="description" content="Arcentis Solutions empowers organizations through transformative, integrated solutions that bridge vision with execution. Digital transformation, talent optimization, and strategic innovation.">
+    <meta name="description" content="Arcentis Solutions empowers organizations through transformative, integrated solutions that bridge vision with execution, driving sustainable growth and meaningful impact.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="hero-background.jpg" as="image">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading Excellence...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="arcentis_logo_main.png" alt="Arcentis Solutions" class="logo" style="max-width: 150px; height: auto;">
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
+    <nav class="fixed top-0 left-0 right-0 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="arcentis-logo.png" 
+                         alt="Arcentis Solutions" 
+                         class="h-12 w-auto"
+                         width="100" 
+                         height="60"
+                         loading="eager">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
                     <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
                     <a href="#services" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
                     <a href="#vision" class="nav-link">Vision & Mission</a>
-                </li>
-                <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <a href="#home" class="mobile-nav-link">Home</a>
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#services" class="mobile-nav-link">Services</a>
+                <a href="#vision" class="mobile-nav-link">Vision & Mission</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Transforming Potential into Progress</h1>
-                <p class="hero-subtitle">We empower organizations through transformative, integrated solutions that bridge vision with execution, driving sustainable growth and meaningful impact.</p>
-                <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">Discover Our Approach</a>
-                    <a href="#contact" class="btn btn-secondary">Get Started</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-elements">
-                    <div class="element element-1"></div>
-                    <div class="element element-2"></div>
-                    <div class="element element-3"></div>
-                </div>
+    <section id="home" class="hero-section">
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="hero-title">
+                <span class="text-teal-400">Transforming</span>
+                <br>
+                <span class="gradient-text">Potential into Progress</span>
+            </h1>
+            <p class="hero-subtitle">
+                We empower organizations through transformative, integrated solutions that bridge vision with execution, 
+                driving sustainable growth and meaningful impact.
+            </p>
+            <div class="hero-buttons">
+                <a href="#about" class="hero-btn hero-btn-primary">
+                    Discover Our Approach
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+                <a href="#contact" class="hero-btn hero-btn-secondary">
+                    Get Started
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header" style="text-align: center;">
+    <section id="about" class="about-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2 class="section-title">Who We Are</h2>
                 <p class="section-subtitle">Your strategic partner in transformation</p>
             </div>
-            <div class="about-content" style="display: flex; justify-content: center;">
-                <div class="about-text" style="max-width: 800px; text-align: center;">
-                    <p>At Arcentis Solutions, we build smarter pathways to progress. Our mission is to empower organizations with transformative business solutions that fuel growth, efficiency, and innovation in every corner of their operations.</p>
-                    <p>We specialize in delivering high-impact support that adapts to the evolving needs of modern enterprises. From optimizing customer engagement to enabling digital transformation, enhancing workforce capabilities, and driving operational excellence, our integrated approach helps businesses stay ahead in fast-moving markets.</p>
-                    <p>Technology, strategy, and people are at the heart of everything we do. We combine advanced digital tools with deep industry insight and a human-first mindset to create solutions that are as agile as they are effective.</p>
+
+            <div class="about-content">
+                <div class="about-text animate-on-scroll animate-fade-left">
+                    <p>
+                        At Arcentis Solutions, we build smarter pathways to progress. Our mission is to empower 
+                        organizations with transformative business solutions that fuel growth, efficiency, and innovation 
+                        in every corner of their operations.
+                    </p>
+                    <p>
+                        We specialize in delivering high-impact support that adapts to the evolving needs of modern 
+                        enterprises. From optimizing customer engagement to enabling digital transformation, enhancing 
+                        workforce capabilities, and driving operational excellence, our integrated approach helps 
+                        businesses stay ahead in fast-moving markets.
+                    </p>
+                    <p>
+                        Technology, strategy, and people are at the heart of everything we do. We combine advanced 
+                        digital tools with deep industry insight and a human-first mindset to create solutions that 
+                        are as agile as they are effective.
+                    </p>
+                </div>
+                
+                <div class="about-cards animate-on-scroll animate-fade-right">
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Proven Results</h3>
+                        <p class="text-sm text-gray-600">Measurable impact across industries</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Expert Team</h3>
+                        <p class="text-sm text-gray-600">Industry-leading professionals</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Strategic Focus</h3>
+                        <p class="text-sm text-gray-600">Aligned with your business goals</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Innovation</h3>
+                        <p class="text-sm text-gray-600">Cutting-edge solutions</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
+    <section id="services">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2 class="section-title">Our Services</h2>
                 <p class="section-subtitle">Comprehensive solutions for modern enterprises</p>
             </div>
+
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate-on-scroll animate-fade-up" style="animation-delay: 0.1s;">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </div>
                     <h3 class="service-title">Digital Transformation</h3>
                     <p class="service-description">Modernize your operations with cutting-edge technology solutions that drive efficiency and innovation.</p>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card animate-on-scroll animate-fade-up" style="animation-delay: 0.2s;">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
                         </svg>
                     </div>
                     <h3 class="service-title">Talent Optimization</h3>
                     <p class="service-description">Enhance workforce capabilities through strategic recruitment and development programs.</p>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card animate-on-scroll animate-fade-up" style="animation-delay: 0.3s;">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 3v18h18"/>
-                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                         </svg>
                     </div>
                     <h3 class="service-title">Business Development</h3>
                     <p class="service-description">Strategic consulting to accelerate growth and market expansion opportunities.</p>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card animate-on-scroll animate-fade-up" style="animation-delay: 0.4s;">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
                     <h3 class="service-title">Process Optimization</h3>
                     <p class="service-description">Streamline operations and eliminate inefficiencies for maximum productivity.</p>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card animate-on-scroll animate-fade-up" style="animation-delay: 0.5s;">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                         </svg>
                     </div>
                     <h3 class="service-title">Software Innovation</h3>
                     <p class="service-description">Custom software development and technology solutions tailored to your needs.</p>
                 </div>
-                <div class="service-card">
+
+                <div class="service-card animate-on-scroll animate-fade-up" style="animation-delay: 0.6s;">
                     <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                         </svg>
                     </div>
                     <h3 class="service-title">Strategic Consulting</h3>
@@ -155,125 +254,396 @@
     </section>
 
     <!-- Vision & Mission Section -->
-    <section id="vision" class="vision-mission">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Vision & Mission</h2>
-                <p class="section-subtitle">Guiding principles that drive our purpose</p>
+    <section id="vision" class="vision-mission-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <h2 class="section-title" style="color: white;">Our Vision & Mission</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">Guiding principles that drive our purpose</p>
             </div>
-            <div class="vm-content">
-                <div class="vm-card vision-card">
-                    <div class="vm-header">
-                        <div class="vm-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                <circle cx="12" cy="12" r="3"/>
+
+            <div class="vision-mission-grid">
+                <div class="vision-card animate-on-scroll animate-fade-left">
+                    <div class="vision-card-header">
+                        <div class="vision-card-icon">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <h3>Our Vision</h3>
+                        <h3 class="vision-card-title">Our Vision</h3>
                     </div>
-                    <p>To be the catalyst that transforms potential into progress, empowering organizations worldwide to achieve extraordinary growth through the seamless integration of human excellence, technological innovation, and strategic insight.</p>
+                    <p class="vision-card-content">
+                        To be the catalyst that transforms potential into progress, empowering organizations worldwide 
+                        to achieve extraordinary growth through the seamless integration of human excellence, 
+                        technological innovation, and strategic insight.
+                    </p>
                 </div>
-                <div class="vm-card mission-card">
-                    <div class="vm-header">
-                        <div class="vm-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+
+                <div class="vision-card animate-on-scroll animate-fade-right">
+                    <div class="vision-card-header">
+                        <div class="vision-card-icon">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                             </svg>
                         </div>
-                        <h3>Our Mission</h3>
+                        <h3 class="vision-card-title">Our Mission</h3>
                     </div>
-                    <p>At Arcentis Solutions, we partner with organizations to unlock their full potential through transformative, integrated solutions that bridge vision with execution. We deliver comprehensive services across digital transformation, talent optimization, business development, and strategic innovation, combining cutting-edge technology with human-centered expertise to create sustainable, measurable impact.</p>
+                    <p class="vision-card-content">
+                        At Arcentis Solutions, we partner with organizations to unlock their full potential through 
+                        transformative, integrated solutions that bridge vision with execution. We deliver comprehensive 
+                        services across digital transformation, talent optimization, business development, and strategic 
+                        innovation, combining cutting-edge technology with human-centered expertise to create sustainable, 
+                        measurable impact.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Ready to Transform?</h2>
-                <p class="section-subtitle">Let's discuss how we can help unlock your organization's potential</p>
+    <section id="contact" class="contact-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <h2 class="section-title" style="color: white;">Ready to Transform?</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">
+                    Let's discuss how we can help unlock your organization's potential
+                </p>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info animate-on-scroll animate-fade-left">
                     <h3>Get in Touch</h3>
-                    <p>Ready to start your transformation journey? We're here to help you bridge the gap between where you are and where you want to be.</p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
+                    <p>
+                        Ready to start your transformation journey? We're here to help you bridge the gap 
+                        between where you are and where you want to be.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                             </div>
-                            <span>info@arcentissolutions.com</span>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="opacity-90">info@arcentissolutions.com</p>
+                            </div>
                         </div>
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                 </svg>
                             </div>
-                            <span>+63 9812179888</span>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <p class="opacity-90">+63 981279888</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="company" name="company" placeholder="Company Name">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Tell us about your transformation goals..." rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+
+                <!-- Contact Form -->
+                <div class="contact-form animate-on-scroll animate-fade-right">
+                    <form class="space-y-6" action="#" method="POST">
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                name="name"
+                                placeholder="Your Name" 
+                                class="form-input"
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <input 
+                                type="email" 
+                                name="email"
+                                placeholder="Your Email" 
+                                class="form-input"
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                name="company"
+                                placeholder="Company Name" 
+                                class="form-input"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <textarea 
+                                name="message"
+                                placeholder="Tell us about your transformation goals..." 
+                                class="form-textarea"
+                                required
+                            ></textarea>
+                        </div>
+                        <button type="submit" class="form-button">
+                            Send Message
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="arcentis_logo_main.png" alt="Arcentis Solutions" class="logo" style="max-width: 150px; height: auto;">
-                    <p>Transforming Potential into Progress</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="footer-grid">
+                <div>
+                    <img src="arcentis-logo.png" alt="Arcentis Solutions" class="h-8 w-auto">
+                    <p class="text-gray-400 italic mt-2">Transforming Potential into Progress</p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#services">Digital Transformation</a></li>
-                            <li><a href="#services">Talent Optimization</a></li>
-                            <li><a href="#services">Business Development</a></li>
-                            <li><a href="#services">Process Optimization</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#vision">Vision & Mission</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Digital Transformation</a></li>
+                        <li><a href="#services">Talent Optimization</a></li>
+                        <li><a href="#services">Business Development</a></li>
+                        <li><a href="#services">Process Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#vision">Vision & Mission</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 Arcentis Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- Enhanced JavaScript -->
+    <script>
+        // Page Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('pageLoader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Scroll Progress Bar
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        }
+
+        // Navigation Scroll Effect
+        function updateNavbar() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Back to Top Button
+        function updateBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+
+        // Scroll-triggered Animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Active navigation highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        function updateActiveNav() {
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        // Back to top functionality
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navbarHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Enhanced form submission
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const company = formData.get('company');
+            const message = formData.get('message');
+            
+            // Simulate form submission with loading state
+            const submitBtn = contactForm.querySelector('.form-button');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = `
+                <div class="loader-spinner" style="width: 20px; height: 20px; margin: 0;"></div>
+                Sending...
+            `;
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert(`Thank you, ${name}! Your message has been received. We'll get back to you soon.`);
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Parallax effect for hero section
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero-section');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        }
+
+        // Intersection Observer for better performance
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animation elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Event listeners
+        window.addEventListener('scroll', () => {
+            updateScrollProgress();
+            updateNavbar();
+            updateBackToTop();
+            updateActiveNav();
+            // updateParallax(); // Uncomment for parallax effect
+        });
+
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            animateOnScroll();
+            updateActiveNav();
+        });
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            updateActiveNav();
+        });
+
+        // Add stagger animation delays to service cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
 </body>
 </html>
 
