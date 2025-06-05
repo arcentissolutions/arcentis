@@ -386,10 +386,10 @@ nav.scrolled {
 .hero-title {
     font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 800;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.25rem;  /* Further reduced from 0.5rem */
     animation: heroTitleSlide 1.2s ease-out;
     line-height: 1.1;
-    padding-bottom: 0.2rem;
+    padding-bottom: 0rem;    /* Removed padding */
 }
 
 .hero-title .text-white {
@@ -410,12 +410,13 @@ nav.scrolled {
 
 .hero-subtitle {
     font-size: clamp(1.125rem, 3vw, 1.5rem);
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;  /* Further reduced from 1.5rem */
     opacity: 0;
     animation: heroSubtitleFade 1s ease-out 0.5s forwards;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0.125rem;    /* Further reduced from 0.25rem */
 }
 
 .hero-buttons {
@@ -552,21 +553,49 @@ section {
 
 .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
+    position: relative;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--neutral-900);
     margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--neutral-900);
+}
+
+.vision-mission-section .section-title,
+.contact-section .section-title {
+    color: white;
 }
 
 .section-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.6;
     color: var(--neutral-600);
     max-width: 600px;
     margin: 0 auto;
+}
+
+.vision-mission-section .section-subtitle,
+.contact-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
 }
 
 /* Enhanced Service Cards */
@@ -657,13 +686,20 @@ section {
 }
 
 .about-text {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--neutral-700);
+    max-width: 800px;
+    margin: 0 auto 3rem;
 }
 
 .about-text p {
-    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--neutral-800);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
 }
 
 .about-cards {
@@ -774,6 +810,13 @@ section {
 .contact-info h3 {
     color: white;
     margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
 }
 
 .contact-info p {
@@ -785,19 +828,40 @@ section {
 
 .contact-item {
     display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .contact-item-icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     background: var(--gradient-accent);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1rem;
+}
+
+.contact-item-icon svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.contact-item div p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.contact-item div p:first-child {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.contact-item div p:last-child {
+    font-size: 1rem;
 }
 
 .contact-form {
